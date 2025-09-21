@@ -1,0 +1,45 @@
+Version: 1.0
+Date: 2025-09-21
+Author: Zikri
+
+---
+
+Description:
+Simple text converter built with HTML, CSS, JS.
+Allows basic text transformations: Binary,Hex,Octal,ASCII num.
+
+---
+
+Usage Notes:
+- Open index.html in browser to use.
+- Type/paste text into text area, choose transformation, click the convert button.
+- Copy results manually if needed.
+
+---
+
+Known Issues / Bugs:
+- No live conversion while typing.
+- Limited to preset transformations.
+- Mobile UI may need minor adjustments.
+- There's a bug at copy button animation when the device is smaller than 390px.
+
+---
+
+Ideas / Improvements:
+- Add more text transformations (base64,morse,decimal,etc.)
+- Add export/import text with files  feature.
+- Add live conversion
+- Fix and upgrade the mobile UI
+- Add animation at beginning
+- Add other languange
+- Add more advance setting (font size,font family,etc.)
+
+---
+
+Notes from the author:
+Yoo,i'm Zikri. This repository is just a practice project.
+I made this because I want to practice my skills in programming with just a phone
+
+Required Notice: Copyright (c) 2025 Zikri
+
+# PolyForm Noncommercial License 1.0.0

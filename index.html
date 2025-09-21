@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Lexi Change | Text Converter into Binary, Hex, Octal, & ASCII</title>
+</head>
+<body>
+  <!-- 
+    well read the js file
+  -->
+  <div class="overlay"></div>
+  
+  <div class="nav-container">
+    <ul>
+      <li class="first"><span class="material-symbols-outlined" id="settings-button">settings</span></li>
+      <li><br></li>
+      <li class="last"><span class="material-symbols-outlined" onclick="darkMode()" id="dark-logo">dark_mode</span></li>
+    </ul>
+  </div>
+  
+  <div class="message-feedback" id="messageFeedback"></div>
+  
+<div class="overlay-settings" id="overlaySettings"></div>
+
+  <div class="settings-sidebar" id="settingsSidebar">
+    <div class="sidebar-header">
+    <h2><span class="material-symbols-outlined">settings</span> Settings</h2>
+    <button class="close-button" id="closeButton">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="setting-group">
+      <h3><span class="material-symbols-outlined">palette</span> Display</h3>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Dark Mode</h4>
+          <p>Enable dark mode display</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="slider-dark-mode" onclick="darkMode()">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <h4>Theme color</h4>
+          <p>Choose the theme color you like</p>
+        </div>
+          <div class="color-option">
+            <div class="color-circle blue active" id="blue-theme"></div>
+            <div class="color-circle green" id="green-theme"></div>
+            <div class="color-circle red" id="red-theme"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <h3><span class="material-symbols-outlined">construction</span>Advance</h3>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h4>Word Break</h4>
+            <p>Neatness of text from each display</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" checked id="word-break-slider">
+            <span class="slider"></span>
+          </label>
+        </div> 
+        <div class="setting-item">
+          <div class="setting-info">
+          <h4>Uppercase</h4>
+          <p>Output text would be generate uppercased (only hex would be effected)</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="uppercase-slider" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+          <h4>Separator</h4>
+          <p>Output text have a separator (whitespace) between the text</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="separator-slider" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+          <h4>Stacking Paste</h4>
+          <p>Enable stacking text with paste button</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="stack-paste">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <h3><span class="material-symbols-outlined">language</span>Language</h3>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h4>Language</h4>
+            <p>Choose the languange</p>
+          </div>
+          <select class="select-box">
+            <option>English</option>
+            <option disabled>Coming soon!</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <h3><span class="material-symbols-outlined">notes</span>More</h3>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h4>About the creator</h4>
+            <p>Github – Zikri-codes</p>
+          </div>
+          <div class="social-icon bg-icon-s"><a class="color-black" href="https://github.com/zikri-codes"><i class="bi bi-github"></i></a></div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <h4>License</h4>
+            <p>PolyForm Noncommercial License 1.0.0</p>
+          </div>
+          <div class="social-icon bg-icon-s"><a class="color-black" href="https://github.com/zikri-codes/Lexi-Change-ZPP-IV/blob/main/LICENSE"><i class="color-black bi bi-file-earmark-text"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center">
+    <h1>LEXI CHANGE</h1>
+    <p>Lexi change is a web that converts text using American Standard Code for Information Interchange (ASCII) into other formats such as binary or hexadecimal</p>
+  </div>
+  <div class="container">
+    <div class="container-main">
+      <h2 class="title">CONVERTER</h2>
+      <div class="option">
+        <label>From</label>
+        <select id="encoder-from" class="btn btn-outlined-secondary">
+          <option value="text">Text</option>
+          <option value="binary">Binary</option>
+          <option value="hex">Hex</option>
+          <option value="octal">Octal</option>
+          <option value="ascii">ASCII</option>
+        </select>
+        <label>To</label>
+        <select id="encoder-to" class="btn btn-outlined-primary">
+          <option value="binary">Binary</option>
+          <option value="hex">Hex</option>
+          <option value="octal">Octal</option>
+          <option value="ascii">ASCII</option>
+          <option value="text">Text</option>
+        </select>
+      </div>
+      <div class="textarea-wrapper">
+        <span class="material-symbols-outlined pan-zoom icon-m" id="zoom-in">expand_all</span>
+        <textarea class="display word-break wbabled" id="display-input" placeholder="Type or paste your text..."></textarea>
+        <button class="w-full btn btn-center btn-outlined-primary" id="paste_content">Paste<span class="material-symbols-outlined icon-s">content_paste</span></button>
+      </div>
+      <div class="container-btn">
+        <button class="btn btn-center btn-outlined-primary" id="convert-encoder">
+          <span class="material-symbols-outlined icon-s">swap_horiz</span>
+          Convert
+        </button>
+        <button class="btn btn-center btn-outlined-secondary" id="reset">
+          <span class="material-symbols-outlined icon-s">restart_alt</span>
+          Reset
+        </button>
+        <button class="btn btn-center btn-outlined-primary" id="swap">
+          <span class="material-symbols-outlined icon-s">swap_vert</span>
+          Swap
+        </button>
+      </div>
+      <div class="textarea-wrapper">
+        <span class="material-symbols-outlined pan-zoom icon-m" id="zoom-in-output">expand_all</span>
+        <textarea class="display word-break wbabled" id="display-output" readonly></textarea>
+      </div>
+      <div class="container-btn-cd position-relative mb-2rem">
+        <span class="btn-center" id="toast">
+          <span class="material-symbols-outlined icon-s" id="toastContent">library_add_check</span>
+        </span>
+        <button class="btn btn-outlined-primary btn-center" id="copy">
+          <span class="material-symbols-outlined icon-s" id="copy-logo">content_copy</span>
+          Copy
+        </button>
+        <button class="btn btn-outlined-primary btn-center btn-download" id="download-button">
+          <span class="material-symbols-outlined icon-s">download</span>
+          Download
+        </button>
+        <span class="btn-center file-info">
+          <span class="material-symbols-outlined icon-s">description</span>
+        .txt
+        </span>
+      </div>
+    </div>
+    <div class="container-main">
+      <div class="explanation">
+        <h2>HOW TO USE IT?</h2>
+        <ul class="step-htui">
+          <li><strong>Step 1</strong><i class="double-dot">:</i> <span>Type or paste your text into the input box</span></li>
+          <li><strong>Step 2</strong><i class="double-dot">:</i> <span>Select your desired input / output format (binary,hexadecimal,etc.)</span></li>
+          <li><strong>Step 3</strong><i class="double-dot">:</i> <span>Click the convert button</span></li>
+          <li><strong>Step 4</strong><i class="double-dot">:</i> <span>View the converted result in the output box</span></li>
+        </ul>
+      </div>
+      <div class="example">
+        <h2 class="text-center">Example</h2>
+        <div class="example-converting">
+          <div class="example-converting-button-text">
+            <label class="mb-half-rem">Convert</label>
+            <span class="btn bg-black btn-outlined-secondary font-mono">Hello, World!</span>
+          </div>
+          <div class="converting-example-button">
+            <label>To</label>
+            <div class="converting-example-button-child">
+              <button class="btn btn-convert border-left" data-type="binary">Binary</button>
+              <button class="btn btn-convert" data-type="hex">Hex</button>
+              <button class="btn btn-convert" data-type="octal">Octal</button>
+              <button class="btn btn-convert border-right" data-type="ascii">ASCII</button>
+            </div>
+          </div>
+          <div class="container-display-example">
+            <textarea class="display-example word-break wbabled" id="example-output"readonly></textarea>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-faq">
+    <h2 class="text-center">Frequently Asked Question</h2>
+    <h3 class="text-center opacity-5">F.A.Q</h3>
+    <div class="faq-items">
+      <div class="faq-questions">
+        <h3>What kind of text can I convert?</h3>
+        <span class="material-symbols-outlined faq-icon">expand_more</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p>You can convert normal text like <strong>letters, numbers, and common symbols.</strong> Some special characters may give unexpected results.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-items">
+      <div class="faq-questions">
+        <h3>Is there a text length limit?</h3>
+        <span class="material-symbols-outlined faq-icon">expand_more</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p><strong>No stritch limit</strong>, but very long text might take more time to convert.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-items">
+      <div class="faq-questions">
+        <h3>Can I convert back from Binary/Hex/Octal/ASCII to text?</h3>
+        <span class="material-symbols-outlined faq-icon">expand_more</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p><strong>Yes!</strong> Just paste the converted result back into the input area and convert again as long as the input format is correct.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-items">
+      <div class="faq-questions">
+        <h3>Can I change the separator between outputs?</h3>
+        <span class="material-symbols-outlined faq-icon">expand_more</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p><strong>Yes</strong>, but for now it only supports a <strong>whitespace</strong> or <strong>no sparator</strong>. You can switch between these two options using the separator slider, and you can access it through the settings icon in the navigation bar for easy adjustments.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-items">
+      <div class="faq-questions">
+        <h3>Does it update automatically as I type?</h3>
+        <span class="material-symbols-outlined faq-icon">expand_more</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p>For now. The converter <strong>doesn't</strong> update live as you type, so you’ll need to press the convert button to see the results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <h2>LEXI CHANGE</h2>
+    <p>LexiChange by Zikri. Convert text to Binary, Hex, Octal, ASCII, and decode back. Copy or download results easily.</p>
+    <p class="opacity-5">PolyForm Noncommercial License 1.0.0</p>
+    <div class="social">
+      <div class="social-icon"><a href="https://github.com/zikri-codes"><i class="bi bi-github"></i></a></div>
+      <div class="social-icon"><a href="https://instagram.com/zikriwannabeeditor"><i class="bi bi-instagram"></i></a></div>
+      <div class="social-icon"><a href="https://x.com/zikridev"><i class="bi bi-twitter-x"></i></a></div>
+      <div class="social-icon"><a href="mailto:zikri.codes@gmail.com"><i class="bi bi-envelope"></i></a></div>
+      <div class="social-icon"><a href="https://github.com/zikri-codes/Lexi-Change-ZPP-IV/blob/main/LICENSE"><i class="bi bi-file-earmark-text"></i></a></div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
