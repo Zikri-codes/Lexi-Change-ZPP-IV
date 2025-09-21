@@ -13,7 +13,7 @@
 
 ## 📌 Description
 A simple web-based **text converter** built with HTML, CSS, and JavaScript.  
-Users can **convert text** between different formats or manipulate strings easily through the web.
+Users can **convert text** between different formats easily through the web.
 
 ## ✨ Features
 - **Text transformations**:  
@@ -30,15 +30,16 @@ Users can **convert text** between different formats or manipulate strings easil
 ## 📁 Project Structure
 
 ```
-. ├── README.md                 # Project description 
-  ├── LICENSE                   # Polyform NC License 
-  ├── notes.txt                 # Some trash stuff yk
-  ├── index.html                # Main HTML file 
-  ├── style.css                 # Styling 
-  ├── script.js                 # JS logic 
-  ├── background-dark-1757.png  # Dark background web
-  ├── background-1757.png       # Background web
-  └── screenshot.png            # Main content screenshot
+.
+├── README.md                 # Project description 
+├── LICENSE                   # Polyform NC License 
+├── notes.txt                 # Some trash stuff yk
+├── index.html                # Main HTML file 
+├── style.css                 # Styling 
+├── script.js                 # JS logic 
+├── background-dark-1757.png  # Dark background web
+├── background-1757.png       # Background web
+└── screenshot.png            # Main content screenshot
 ```
 
 ## 📄 License
